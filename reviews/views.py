@@ -13,3 +13,13 @@ class ApprovedReviewsListView(generics.ListAPIView):
 class ReviewListCreateView(generics.ListCreateAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
+from django.http import HttpResponse
+from django.contrib.auth.models import User
+
+def create_superuser(request):
+    if not User.objects.filter(username="amnarafi85").exists():
+        User.objects.create_superuser("amnarafi85", "amnarafi06@example.com", "amna1085.")
+        return HttpResponse("Superuser created successfully!")
+    else:
+        return HttpResponse("Superuser already exists!")
+    
