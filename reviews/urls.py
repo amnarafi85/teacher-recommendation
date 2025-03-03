@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ReviewListCreateView, ApprovedReviewsListView, create_superuser  # ✅ Import create_superuser
+from .views import ReviewListCreateView, ApprovedReviewsListView
 
 urlpatterns = [
     path('reviews/', ReviewListCreateView.as_view(), name='reviews-list-create'),
